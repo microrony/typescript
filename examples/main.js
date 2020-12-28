@@ -10,4 +10,4 @@ const sum = () => {
   console.log(add(input1.value, input2.value))
 }
 
-button.addEventListener('click', sum)
+button.addEventListener('click', sum);
