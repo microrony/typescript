@@ -1,10 +1,9 @@
-var button = document.querySelector('button');
-var input1 = document.getElementById('num1');
-var input2 = document.getElementById('num2');
-var add = function (num1, num2) {
-    return num1 + num2;
-};
-var sum = function () {
-    console.log(add(+input1.value, +input2.value));
-};
-button.addEventListener('click', sum);
+function padLeft(value, padding) {
+    if (typeof padding === "number") {
+        return Array(padding + 1).join(" ") + value;
+    }
+    if (typeof padding === "string") {
+        return padding + value;
+    }
+    throw new Error("Expected string or number, got '" + padding + "'.");
+}

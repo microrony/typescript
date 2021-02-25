@@ -1,13 +1,9 @@
-const button = document.querySelector('button');
-let input1 = document.getElementById('num1')! as HTMLInputElement;
-let input2 = document.getElementById('num2')! as HTMLInputElement;
-
-const add = (num1: number, num2: number) => {
-  return num1 + num2
+function padLeft(value: string, padding: string | number) {
+  if (typeof padding === "number") {
+    return Array(padding + 1).join(" ") + value;
+  }
+  if (typeof padding === "string") {
+    return padding + value;
+  }
+  throw new Error(`Expected string or number, got '${padding}'.`);
 }
-
-const sum = () => {
-  console.log(add(+input1.value, +input2.value))
-}
-
-button.addEventListener('click', sum);
